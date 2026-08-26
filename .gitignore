@@ -1,0 +1,9 @@
+.impeccable/review/
+.impeccable/chrome-profile/
+
+# Local design tooling and source reference material are not part of the public site.
+.agents/
+.codex/
+.impeccable/
+pricing/
+skills-lock.json
