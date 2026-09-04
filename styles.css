@@ -218,7 +218,21 @@ blockquote footer { margin-top: 1.1rem; font-family: var(--display); font-size: 
 .food-feature div { position: absolute; z-index: 1; right: 1.5rem; bottom: 1.3rem; left: 1.5rem; }
 .food-feature h3 { margin: 0; font-family: var(--display); font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 600; line-height: 1; text-transform: uppercase; }
 .food-feature p { margin: .45rem 0 0; color: var(--muted-on-dark); }
+.food-pairs { max-width: var(--max-width); margin: 0 auto; display: grid; gap: 3.5rem; }
+.food-pair > h3 { margin: 0 0 1rem; color: var(--mustard); font-family: var(--display); font-size: 1rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.food-pair-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+.food-card { min-width: 0; background: var(--smoke-soft); }
+.food-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.food-card > div { padding: 1.1rem 1.2rem 1.25rem; }
+.food-card h4 { margin: 0; font-family: var(--display); font-size: clamp(1.6rem, 2.3vw, 2.35rem); font-weight: 600; line-height: 1; text-transform: uppercase; }
+.food-card p { margin: .55rem 0 0; color: var(--muted-on-dark); font-size: .98rem; }
 .gallery { max-width: var(--max-width); margin: 1.2rem auto 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 15rem; gap: 1.2rem; }
+.gallery-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: auto; margin-top: 3.5rem; }
+.gallery-card { min-width: 0; background: var(--smoke-soft); }
+.gallery-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery-card div { padding: 1rem 1.1rem 1.2rem; }
+.gallery-card h3 { margin: 0; font-family: var(--display); font-size: 1.45rem; font-weight: 600; line-height: 1; text-transform: uppercase; }
+.gallery-card p { margin: .5rem 0 0; color: var(--muted-on-dark); font-size: .92rem; }
 .gallery figure { min-width: 0; margin: 0; overflow: hidden; }
 .gallery .gallery-tall { grid-row: span 2; }
 .gallery .gallery-wide { grid-column: span 2; }
@@ -280,6 +294,7 @@ blockquote footer { margin-top: 1.1rem; font-family: var(--display); font-size: 
   .story-photo-wrap { grid-row: auto; }
   blockquote { align-self: end; }
   .food-heading { align-items: start; flex-direction: column; gap: 1.5rem; }
+  .gallery-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .food-feature-wide { grid-column: span 2; grid-row: auto; min-height: 36rem; }
   .gallery { grid-template-columns: repeat(3, 1fr); }
@@ -307,6 +322,8 @@ blockquote footer { margin-top: 1.1rem; font-family: var(--display); font-size: 
   .feature-grid { grid-template-columns: 1fr; }
   .food-feature, .food-feature-wide { grid-column: auto; min-height: 29rem; }
   .food-feature-wide { min-height: 36rem; }
+  .food-pair-grid, .gallery-cards { grid-template-columns: 1fr; }
+  .food-card img, .gallery-card img { aspect-ratio: 4 / 3; }
   .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 12rem; gap: .75rem; margin-top: .75rem; }
   .gallery .gallery-wide { grid-column: span 2; }
   .gallery .gallery-tall { grid-row: span 2; }
