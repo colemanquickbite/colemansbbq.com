@@ -26,6 +26,32 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 980) closeMenu();
 });
 
+const quoteForm = document.querySelector('.quote-form');
+const formStatus = quoteForm?.querySelector('[data-form-status]');
+
+quoteForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!formStatus) return;
+
+  formStatus.hidden = false;
+  formStatus.textContent = 'Sending your quote request...';
+
+  try {
+    const response = await fetch(quoteForm.action, {
+      method: 'POST',
+      body: new FormData(quoteForm),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('Form submission failed');
+
+    quoteForm.reset();
+    formStatus.textContent = "Thank you! Your quote request has been submitted. We'll be in touch soon.";
+  } catch {
+    formStatus.textContent = 'Something went wrong. Please try again or contact us directly.';
+  }
+});
+
 const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = document.querySelector('[data-lightbox-image]');
 const lightboxCaption = document.querySelector('[data-lightbox-caption]');
